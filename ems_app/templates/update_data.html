@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{% block content%}
+
+<h2>Update Employees Data</h2>
+<form name ="updateEmpForm", method='post' action ={% url 'update_data' %}
+>
+ {% csrf_token %}
+{{form}}
+<input type ="submit" value="Add">
+    </form>
+
+
+
+{%endblock content%}

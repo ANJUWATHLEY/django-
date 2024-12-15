@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-4">
+    <h2 class="text-center">Register User Here</h2>
+
+    <form name="user_form" method="post" action="{% url 'register' %}" class="p-4 border rounded shadow-sm bg-light">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            {{ form.as_p }}  <!-- Renders all form fields in <p> tags -->
+        </div>
+
+        <div class="text-center">
+            <input type="submit" value="Add" class="btn btn-primary">
+        </div>
+    </form>
+    
+</div>
+
+{% endblock content %}

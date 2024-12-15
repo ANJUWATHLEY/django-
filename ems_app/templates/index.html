@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Employee Management Dashboard</h1>
+    <p>I will perform CRUD operations</p>
+<h2>Employee Records</h2>
+<table class="table">
+  <tr class="table-dark">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Salary</th>
+  </tr>
+  {% for i in employee %}
+  <tr class="table-success">
+      <td scope="row">{{ i.id }}</td>
+      <td scope="row">{{ i.name }}</td>
+      <td scope="row">{{ i.age }}</td>
+      <td scope="row">{{ i.salary }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<h2>Department Records</h2>
+<table class="table">
+  <tr class="table-dark">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Head of Department</th>
+      <th>Location</th>
+      <th>Number of Employees</th>     
+  </tr>
+  {% for i in department %}
+  <tr class="table-info">
+      <td>{{ i.id }}</td>
+      <td>{{ i.name }}</td>
+      <td>{{ i.head_of_department }}</td>  
+      <td>{{ i.location }}</td>            
+      <td>{{ i.number_of_employees }}</td>     
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock content %}

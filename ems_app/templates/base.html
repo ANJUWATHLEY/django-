@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Employee Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .box {
+            padding: 20px;
+            margin: 20px auto;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        .box:hover {
+            color: lightgray;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar code with login check -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                {% if user.is_authenticated %}
+                    <!-- Navbar links only for logged-in users -->
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="/home/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/add_data/">Add Data</a></li>
+                    </ul>
+                    <div class="d-flex">
+                        <a class="nav-link" href="/logout/">Logout</a>
+                    </div>
+                {% else %}
+                    <!-- Header for users who are not logged in -->
+                    <h1 class="ms-3">Employee Management</h1>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content block where individual pages will insert their content -->
+    <div class="container mt-4">
+        {% block content %}{% endblock content %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

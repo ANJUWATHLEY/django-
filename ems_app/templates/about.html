@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>This is My About Page</h1>
+<p>
+    <strong>Models (Data Structure)</strong><br>
+    Yaha humne models banaya h jo database ki table ki tarah hota h. Isme humne fields di h jaise <strong>name</strong> aur <strong>salary</strong> jo bhi user dega, yeh sab isme store hoga.
+</p>
+<div>
+    <strong>Views (Logic)</strong><br>
+    Models ka data yaha pe bheja jata h.
+</div>
+<div>
+    <strong>Templates (Design / HTML)</strong><br>
+    Frontend ka data likhte hain. Isme bhi hum <code>base.html</code> bana dete hain aur other files me isko import kar dete hain.
+</div>
+
+<div>
+    <strong>URLs</strong><br>
+    <code>urls.py</code> mein hum yeh define karte hain ki kaunsa view kis URL se chalega.  
+</div>
+
+<div>
+    <strong>Admin Panel</strong><br>
+    Admin panel ko use karke tum apne employees aur departments ka data add/update/delete kar sakte ho. Models ko register karna zaroori hai <code>admin.py</code> mein taake wo admin panel mein dikhen.
+</div>
+
+<div>
+    <strong>Migrations (Database setup)</strong><br>
+    Jab tum koi naya field ya model add karte ho, toh tumhe migrate karna padta hai taake changes database mein apply ho jayein. Iske liye commands hain:
+    <ul>
+        <li><code>python manage.py makemigrations</code></li>
+        <li><code>python manage.py migrate</code></li>
+        <li><code>python manage.py runserver</code></li>
+    </ul>
+</div>
+
+<div>
+    <strong>Summary</strong><br>
+    <ul>
+        <li><strong>Models:</strong> Database tables jisme fields hain (Employee, Department).</li>
+        <li><strong>Views:</strong> Backend code jo data fetch karke template ko bhejte hain.</li>
+        <li><strong>Templates:</strong> HTML design jo user ko dikhti hai.</li>
+        <li><strong>URLs:</strong> Kis page par kaunsa view chalega.</li>
+        <li><strong>Admin:</strong> Data ko manage karne ka backend.</li>
+        <li><strong>Migrations:</strong> Database setup aur updates.</li>
+    </ul>
+</div>
+{% endblock content %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-4">
+    <h2 class="text-center">Add Employee Data</h2>
+    <form name="addEmpForm" method="post" action="{% url 'add_data' %}" class="p-4 border rounded shadow-sm bg-light">
+        {% csrf_token %}
+        <div class="mb-3">
+            {{ form.as_p }}  <!-- Use this if your form fields are already structured -->
+        </div>
+        <div class="text-center">
+            <input type="submit" value="Add" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+
+
+{% endblock content %}
